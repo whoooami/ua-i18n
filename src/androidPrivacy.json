@@ -1,0 +1,36 @@
+{
+  "version": "33",  
+  "prompt": "template",
+  "title": "%title%",
+  "message": "%privacy.template.message%",
+  "buttonAccept": "%privacy.template.buttonAccept%",
+  "buttonRefuse": "%privacy.template.buttonRefuse%",
+  "hrefLoader": "system|default",
+  "second": {
+    "title": "%privacy.template.second.title%",
+    "message": "%privacy.template.second.message%",
+    "buttonAccept": "%privacy.template.second.buttonAccept%",
+    "buttonRefuse": "%privacy.template.second.buttonRefuse%"
+  },
+  "disagreeMode":{
+    "support": false,
+    "loadNativePlugins": false,
+    "visitorEntry": true
+  },
+  "styles": {
+    "backgroundColor": "#ffffff",
+    "borderRadius":"5px",
+    "title": {
+      "color": "#426ab3"
+    },
+    "buttonAccept": {
+      "color": "#426ab3"
+    },
+    "buttonRefuse": {
+      "color": "#000000"
+    },
+    "buttonVisitor": {
+      "color": "#426ab3"
+    }
+  }
+}

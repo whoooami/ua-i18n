@@ -1,0 +1,274 @@
+{
+    "name" : "Timebook",
+    "appid" : "",
+    "description" : "",
+    "versionName" : "1.03.09",
+    "versionCode" : 75,
+    "transformPx" : false,
+    "app-plus" : {
+        /* 5+App特有相关 */
+        "usingComponents" : true,
+        "splashscreen" : {
+            "alwaysShowBeforeRender" : true,
+            "waiting" : false,
+            "autoclose" : true,
+            "delay" : 0
+        },
+        "compatible" : {
+            "ignoreVersion" : true
+        },
+        "modules" : {
+            "SQLite" : {},
+            "OAuth" : {},
+            "Push" : {},
+            "Share" : {}
+        },
+        /* 模块配置 */
+        "distribute" : {
+            /* 应用发布信息 */
+            "android" : {
+                /* android打包配置 */
+                "permissions" : [
+                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.INTERNET\"/>"
+                ],
+                "abiFilters" : [ "arm64-v8a", "x86" ],
+                "schemes" : "timebook", // urlscheme timebook://params
+                "autoSdkPermissions" : true,
+                "permissionPhoneState" : {
+                    "request" : "none",
+                    "prompt" : "为保证您正常、安全地使用，需要获取设备识别码（部分手机提示为获取手机号码）使用权限，请允许。"
+                }
+            },
+            // "google" : {
+            //     "schemes" : [
+            //         "timebook" 
+            //     ]
+            // },
+            //...  
+            "ios" : {
+                "idfa" : true,
+                "privacyDescription" : {
+                    "NSRemindersUsageDescription" : "主要用于日程提醒，请允许",
+                    "NSLocalNetworkUsageDescription" : "主要用于初始化以及日程信息同步，请允许"
+                },
+                "capabilities" : {
+                    "entitlements" : {
+                        "com.apple.developer.associated-domains" : [ "applinks:timebook.idotink.com" ]
+                    }
+                },
+                "urltypes" : "timebook",
+                "shortcuts" : [
+                    {
+                        "type" : "new_event",
+                        "title" : "New Event",
+                        "subtitle" : "Create Event quickly",
+                        "iconfile" : "/static/images/shortcut/new_event.png"
+                    }
+                ]
+            },
+            /* ios打包配置 */
+            "sdkConfigs" : {
+                "geolocation" : {},
+                "maps" : {
+                    "amap" : {
+                        "appkey_ios" : "",
+                        "appkey_android" : ""
+                    }
+                },
+                "payment" : {},
+                "push" : {
+                    "unipush" : {}
+                },
+                "oauth" : {
+                    "weixin" : {
+                        "appid" : "",
+                        "appsecret" : "",
+                        "UniversalLinks" : ""
+                    },
+                    "apple" : {}
+                },
+                "share" : {
+                    "weixin" : {
+                        "appid" : "",
+                        "UniversalLinks" : ""
+                    }
+                },
+                "ad" : {}
+            },
+            "icons" : {
+                "android" : {
+                    "hdpi" : "unpackage/res/icons/72x72.png",
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+                },
+                "ios" : {
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
+                    "ipad" : {
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png"
+                    },
+                    "iphone" : {
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png"
+                    }
+                }
+            },
+            "splashscreen" : {
+                "useOriginalMsgbox" : true
+            }
+        },
+        "locales" : {
+            "en" : {
+                // 英文  
+                "name" : "Timebook", // 应用名称  
+                "android" : {
+                    "strings" : {
+                        //Android平台自定义字符串  
+                        "dcloud_permission_read_phone_state_message" : "In order to ensure your normal and safe use, you need to obtain the device identification code (some mobile phones prompt to obtain the mobile phone number) use permission, please allow"
+                    }
+                },
+                "ios" : {
+                    "privacyDescription" : {
+                        //iOS平台隐私访问描述信息  
+                        "NSPhotoLibraryUsageDescription" : "save photo, change avatar, upload event attachment etc..",
+                        "NSPhotoLibraryAddUsageDescription" : "save to your photo library.",
+                        "NSCameraUsageDescription" : "Set up an avatar so event initiators can quickly find you"
+                    },
+                    //...  
+                    "infoPlist" : {
+                        //iOS平台自定义InfoPlist.strings  
+                        "CustomKey" : "CustomValue"
+                    }
+                }
+            },
+            //...  
+            "zh" : {
+                // 中文（简体） 
+                "name" : "Timebook", // 应用名称
+                "android" : {
+                    "strings" : {
+                        //Android平台自定义字符串  
+                        "dcloud_permission_read_phone_state_message" : "为保证您正常、安全地使用，需要获取设备识别码（部分手机提示为获取手机号码）使用权限，请允许"
+                    }
+                },
+                "ios" : {
+                    "privacyDescription" : {
+                        //iOS平台隐私访问描述信息  
+                        "NSPhotoLibraryUsageDescription" : "保存图片, 更换头像, 上传事件附件等",
+                        "NSPhotoLibraryAddUsageDescription" : "保存到您的照片库",
+                        "NSCameraUsageDescription" : "设置头像以便让事件发起者快速找到你"
+                    },
+                    //...  
+                    "infoPlist" : {
+                        //iOS平台自定义InfoPlist.strings  
+                        "CustomKey" : "自定义键值"
+                    }
+                }
+            }
+        },
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    //...  
+    /* SDK配置 */
+    "quickapp" : {},
+    /* 快应用特有相关 */
+    "mp-weixin" : {
+        /* 微信小程序特有相关 */
+        "appid" : "",
+        "setting" : {
+            "urlCheck" : false,
+            "postcss" : false,
+            "minified" : true,
+            "es6" : true
+        },
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "mp-alipay" : {
+        "usingComponents" : true,
+        "component2" : true,
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "mp-baidu" : {
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "mp-toutiao" : {
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "mp-qq" : {
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "h5" : {
+        "devServer" : {
+            "port" : 8081,
+            "https" : false,
+            "disableHostCheck" : true,
+            "proxy" : {
+                "/Timebook" : {
+                    "target" : "",
+                    "changeOrigin" : true, //是否跨域
+                    "secure" : true, // 设置支持https协议的代理
+                    "pathRewrite" : {
+                        "^/Timebook" : ""
+                    }
+                }
+            }
+        },
+        "router" : {
+            "base" : ""
+        },
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "vueVersion" : "2",
+    "channel_list" : [
+        {
+            "id" : "ink",
+            "name" : "官网"
+        }
+    ],
+    "uniStatistics" : {
+        "enable" : true
+    },
+    "mp-kuaishou" : {
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "mp-lark" : {
+        "uniStatistics" : {
+            "enable" : true
+        }
+    }
+}
